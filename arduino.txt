@@ -21,21 +21,36 @@ void setup() {
   // 디스플레이
   lcd.init();  // LCD초기 설정
   lcd.backlight(); // LCD초기 설정
-  lcd.setCursor(0,0); //텍스트가 LCD에 나타날 위치
-  lcd.print("Lecture: JAVA");
-  lcd.setCursor(0,1);
-  lcd.print("Progress: 25\%");
 }
 
 void loop() {
 
-  char c;
+ delay(1000);
+  String str;
+
   if (Serial.available()) {
-    c = Serial.read();
-    BTSerial.print(c);
+    str = Serial.read();
+    BTSerial.print(str);
   }
   if (BTSerial.available()) {
-    c = BTSerial.read();
-    Serial.print(c);
+    String str = BTSerial.readStringUntil('\n');
+
+  int first = str.indexOf(",");// 첫 번째 콤마 위치
+  int length = str.length(); // 문자열 길이
+
+  String str1 = str.substring(0, first); // 첫 번째 토큰
+  String str2 = str.substring(first+1, length); // 두 번째 토큰
+
+  lcd.setCursor(0,0); //텍스트가 LCD에 나타날 위치
+  lcd.print("Lecture: ");
+  lcd.print(str1);
+  lcd.print("     ");
+
+  lcd.setCursor(0,1);
+  lcd.print("Progress: ");
+  lcd.print(str2);
+  lcd.print("\%");
+  lcd.print("    ");
+
   }
 }
