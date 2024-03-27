@@ -20,7 +20,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/book_icon_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Bluetooth"
+        android:theme="@style/Theme.Nc4_all"
         tools:targetApi="31">
         <activity
             android:name="com.bitcamp.nc4_all.MainActivity"

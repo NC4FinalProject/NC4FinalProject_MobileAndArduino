@@ -29,7 +29,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
-import com.bitcamp.nc4_all.R;
+import com.bitcamp.nc4_all.*;
 
 import java.util.ArrayList;
 import java.util.List;

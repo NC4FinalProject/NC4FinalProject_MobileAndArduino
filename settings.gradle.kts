@@ -19,6 +19,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "bluetooth"
+rootProject.name = "nc4_all"
 include(":app")
  
