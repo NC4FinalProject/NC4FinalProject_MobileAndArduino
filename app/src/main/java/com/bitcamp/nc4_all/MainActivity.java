@@ -65,6 +65,7 @@ public class MainActivity extends AppCompatActivity {
                 Manifest.permission.ACCESS_COARSE_LOCATION,
                 Manifest.permission.BLUETOOTH,
                 Manifest.permission.BLUETOOTH_ADMIN,
+                Manifest.permission.BLUETOOTH_SCAN,
                 Manifest.permission.INTERNET
         };
         ActivityCompat.requestPermissions(MainActivity.this, permission_list, 1);
