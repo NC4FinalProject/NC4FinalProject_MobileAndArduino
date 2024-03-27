@@ -1,4 +1,4 @@
-package com.example.bluetooth;
+package com.bitcamp.nc4_all;
 
 import android.content.Context;
 
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
     public void useAppContext() {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-        assertEquals("com.example.bluetooth", appContext.getPackageName());
+        assertEquals("com.bitcamp.nc4_all", appContext.getPackageName());
     }
 }

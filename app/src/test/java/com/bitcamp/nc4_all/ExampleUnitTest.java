@@ -1,4 +1,4 @@
-package com.example.bluetooth;
+package com.bitcamp.nc4_all;
 
 import org.junit.Test;
 

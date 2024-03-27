@@ -1,4 +1,4 @@
-package com.example.bluetooth;
+package com.bitcamp.nc4_all;
 
 import android.Manifest;
 import android.bluetooth.BluetoothAdapter;
@@ -14,7 +14,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.pm.PackageManager;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
@@ -24,14 +23,13 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
-import com.example.bluetooth.R;
+import com.bitcamp.nc4_all.R;
 
 import java.util.ArrayList;
 import java.util.List;

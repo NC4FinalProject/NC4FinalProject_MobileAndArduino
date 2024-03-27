@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.bluetooth"
+    namespace = "com.bitcamp.nc4_all"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.bluetooth"
+        applicationId = "com.bitcamp.nc4_all"
         minSdk = 31
         targetSdk = 34
         versionCode = 1
