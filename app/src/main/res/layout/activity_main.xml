@@ -9,75 +9,6 @@
     android:paddingHorizontal="16dp"
     android:paddingTop="16dp">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="72dp"
-        android:layout_height="85dp"
-        android:layout_marginStart="80dp"
-        android:layout_marginTop="32dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/nc4_icon" />
-
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="145dp"
-        android:layout_height="73dp"
-        android:layout_marginStart="160dp"
-        android:layout_marginTop="32dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/nc4_logo" />
-
-    <android.widget.Button
-        android:id="@+id/btn_scan"
-        android:layout_width="158dp"
-        android:layout_height="60dp"
-        android:layout_centerHorizontal="true"
-        android:background="@drawable/button_round"
-        android:text="IOT장비 탐색"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:textColor="#FFFFFF"/>
-
-    <TextView
-        android:id="@+id/tv_device_list"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/btn_scan"
-        android:layout_marginTop="20dp"
-        android:textSize="20sp"
-        android:textColor="#FF000000"
-        android:text="발견한 장치:"
-        android:textStyle="bold"/>
-
-    <ListView
-        android:id="@+id/lv_device_names"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:layout_below="@id/tv_device_list"
-        android:layout_marginTop="10dp"/>
-
-    <EditText
-        android:id="@+id/et_message"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/lv_device_names"
-        android:layout_marginTop="20dp"
-        android:textColorHint="#FF808080"
-        android:textColor="#FF000000"
-        android:hint="과목명,진도율 형태로 입력하시오."/>
-
-    <android.widget.Button
-        android:id="@+id/btn_send"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="설정하기"
-        android:background="@drawable/button_round"
-        android:layout_below="@id/et_message"
-        android:layout_marginTop="10dp"
-        android:textColor="#FFFFFF"
-        android:layout_alignParentEnd="true"/>
-
     <FrameLayout
         android:id="@+id/menu_frame_layout"
         android:layout_width="match_parent"
@@ -97,6 +28,5 @@
         app:labelVisibilityMode="labeled"
         app:layout_constraintBottom_toBottomOf="parent"
         app:menu="@drawable/menu_bottom_nav" />
-
-
+    
 </RelativeLayout>
