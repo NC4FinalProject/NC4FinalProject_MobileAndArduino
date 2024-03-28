@@ -9,6 +9,26 @@
     android:paddingHorizontal="16dp"
     android:paddingTop="16dp">
 
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="72dp"
+        android:layout_height="85dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/nc4_icon" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="145dp"
+        android:layout_height="73dp"
+        android:layout_marginStart="160dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/nc4_logo" />
+
     <android.widget.Button
         android:id="@+id/btn_scan"
         android:layout_width="158dp"
@@ -25,8 +45,9 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/btn_scan"
         android:layout_marginTop="20dp"
+        android:textSize="20sp"
         android:textColor="#FF000000"
-        android:text="발견된 장치:"
+        android:text="발견한 장치:"
         android:textStyle="bold"/>
 
     <ListView
@@ -61,7 +82,7 @@
         android:id="@+id/menu_frame_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="?attr/actionBarSize"/>
+        android:layout_marginBottom="?attr/actionBarSize" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/menu_bottom_navigation"
