@@ -18,6 +18,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -25,13 +26,18 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.bitcamp.nc4_all.*;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -56,10 +62,22 @@ public class MainActivity extends AppCompatActivity {
     private static final UUID HM10_SERVICE_UUID = UUID.fromString("0000ffe0-0000-1000-8000-00805f9b34fb");
     private static final UUID HM10_CHARACTERISTIC_UUID = UUID.fromString("0000ffe1-0000-1000-8000-00805f9b34fb");
 
+    // 하단 네비게이션 바 설정
+    private FragmentManager fragmentManager = getSupportFragmentManager();
+    private MainMenuFragment fragmentMain = new MainMenuFragment();
+    private MainMenuBluetoothFragment fragmentBluetooth = new MainMenuBluetoothFragment();
+    private MainMenuProfileFragment fragmentProfile = new MainMenuProfileFragment();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        // 하단 네비게이션 바 설정
+        FragmentTransaction transaction = fragmentManager.beginTransaction();
+        transaction.replace(R.id.menu_frame_layout, fragmentMain).commitAllowingStateLoss();
+
+        BottomNavigationView bottomNavigationView = findViewById(R.id.menu_bottom_navigation);
+        bottomNavigationView.setOnItemSelectedListener(new ItemSelectedListener());
 
         // Get permission
         String[] permission_list = {
@@ -141,6 +159,25 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    // 네비게이션 바 로직
+    class ItemSelectedListener implements BottomNavigationView.OnItemSelectedListener {
+        @Override
+        public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+            FragmentTransaction transaction = fragmentManager.beginTransaction();
+
+            int itemId = menuItem.getItemId();
+            if (itemId == R.id.fragment_home) {
+                transaction.replace(R.id.menu_frame_layout, fragmentMain).commitAllowingStateLoss();
+            } else if (itemId == R.id.fragment_bluetooth) {
+                transaction.replace(R.id.menu_frame_layout, fragmentBluetooth).commitAllowingStateLoss();
+            } else if (itemId == R.id.fragment_profile) {
+                transaction.replace(R.id.menu_frame_layout, fragmentProfile).commitAllowingStateLoss();
+            }
+
+            return true;
+        }
     }
 
     // 블루투스 스캔 로직
