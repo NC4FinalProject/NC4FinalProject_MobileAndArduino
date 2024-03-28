@@ -1,15 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp">
+    android:background="#ffffff"
+    android:paddingHorizontal="16dp"
+    android:paddingTop="16dp">
 
-    <Button
+    <android.widget.Button
         android:id="@+id/btn_scan"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Scan BLE Devices"
-        android:layout_centerHorizontal="true"/>
+        android:layout_width="158dp"
+        android:layout_height="60dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/button_round"
+        android:text="IOT장비 탐색"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="#FFFFFF"/>
 
     <TextView
         android:id="@+id/tv_device_list"
@@ -17,13 +25,14 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/btn_scan"
         android:layout_marginTop="20dp"
-        android:text="Scanned Devices:"
+        android:textColor="#FF000000"
+        android:text="발견된 장치:"
         android:textStyle="bold"/>
 
     <ListView
         android:id="@+id/lv_device_names"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="200dp"
         android:layout_below="@id/tv_device_list"
         android:layout_marginTop="10dp"/>
 
@@ -33,15 +42,19 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/lv_device_names"
         android:layout_marginTop="20dp"
-        android:hint="Enter message to send"/>
+        android:textColorHint="#FF808080"
+        android:textColor="#FF000000"
+        android:hint="과목명,진도율 형태로 입력하시오."/>
 
-    <Button
+    <android.widget.Button
         android:id="@+id/btn_send"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Send"
+        android:text="설정하기"
+        android:background="@drawable/button_round"
         android:layout_below="@id/et_message"
         android:layout_marginTop="10dp"
+        android:textColor="#FFFFFF"
         android:layout_alignParentEnd="true"/>
 
 </RelativeLayout>

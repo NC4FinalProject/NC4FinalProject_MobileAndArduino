@@ -14,10 +14,12 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -66,6 +68,7 @@ public class MainActivity extends AppCompatActivity {
                 Manifest.permission.BLUETOOTH,
                 Manifest.permission.BLUETOOTH_ADMIN,
                 Manifest.permission.BLUETOOTH_SCAN,
+                Manifest.permission.BLUETOOTH_CONNECT,
                 Manifest.permission.INTERNET
         };
         ActivityCompat.requestPermissions(MainActivity.this, permission_list, 1);
@@ -140,6 +143,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    // 블루투스 스캔 로직
     private void startBLEScan() {
         deviceNames.clear();
         updateDeviceListUI();
@@ -163,7 +167,17 @@ public class MainActivity extends AppCompatActivity {
 
     private void updateDeviceListUI() {
         // ArrayAdapter를 사용하여 리스트뷰 갱신
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, deviceNames);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, deviceNames){
+            @Override
+            public View getView(int position, View convertView, ViewGroup parent) {
+                View view = super.getView(position, convertView, parent);
+                TextView tv = (TextView)view.findViewById(android.R.id.text1);
+                tv.setTextColor(Color.BLACK);
+                return view;
+            }
+        };
+
+
         lvDeviceNames.setAdapter(adapter);
     }
 
