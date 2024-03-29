@@ -1,200 +1,202 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <ImageView
-        android:id="@+id/login_close_iv"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="5dp"
-        android:src="@drawable/btn_actionbar_close"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/login_flo_logo_iv"
-        android:layout_width="80dp"
-        android:layout_height="30dp"
-        android:src="@drawable/nc4_logo"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/login_close_iv" />
-
-    <EditText
-        android:id="@+id/login_id_et"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="80dp"
-        android:layout_marginEnd="5dp"
-        android:background="@null"
-        android:hint="아이디(이메일)"
-        android:inputType="text"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toStartOf="@+id/login_at_sign_tv"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/login_flo_logo_iv" />
-
-    <View
-        android:id="@+id/login_id_underscore_view"
-        android:layout_width="0dp"
-        android:layout_height="1px"
-        android:layout_marginTop="15dp"
-        android:background="#a8a8a8"
-        app:layout_constraintEnd_toEndOf="@+id/login_id_et"
-        app:layout_constraintStart_toStartOf="@+id/login_id_et"
-        app:layout_constraintTop_toBottomOf="@+id/login_id_et" />
-
-    <TextView
-        android:id="@+id/login_at_sign_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="\@"
-        android:textColor="@color/black"
-        android:textSize="14sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/login_id_et"
-        app:layout_constraintEnd_toEndOf="@+id/login_flo_logo_iv"
-        app:layout_constraintStart_toStartOf="@+id/login_flo_logo_iv"
-        app:layout_constraintTop_toTopOf="@+id/login_id_et" />
-
-    <EditText
-        android:id="@+id/login_direct_input_et"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
-        android:layout_marginEnd="20dp"
-        android:background="@null"
-        android:hint="직접입력"
-        android:inputType="textWebEmailAddress"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="@+id/login_id_et"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/login_at_sign_tv"
-        app:layout_constraintTop_toTopOf="@+id/login_id_et" />
-
-    <View
-        android:id="@+id/login_address_underscore_view"
-        android:layout_width="0dp"
-        android:layout_height="1px"
-        android:layout_marginTop="15dp"
-        android:background="#a8a8a8"
-        app:layout_constraintEnd_toEndOf="@+id/login_direct_input_et"
-        app:layout_constraintStart_toStartOf="@+id/login_direct_input_et"
-        app:layout_constraintTop_toBottomOf="@+id/login_direct_input_et" />
-
-    <ImageView
-        android:id="@+id/login_email_list_iv"
-        android:layout_width="15dp"
-        android:layout_height="15dp"
-        android:layout_marginEnd="5dp"
-        android:src="@drawable/nugu_btn_down"
-        app:layout_constraintBottom_toBottomOf="@+id/login_direct_input_et"
-        app:layout_constraintEnd_toEndOf="@+id/login_direct_input_et"
-        app:layout_constraintTop_toTopOf="@+id/login_direct_input_et" />
-
-    <EditText
-        android:id="@+id/login_password_et"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="20dp"
-        android:background="@null"
-        android:hint="비밀번호"
-        android:inputType="textPassword"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/login_id_underscore_view" />
-
-    <View
-        android:id="@+id/login_password_underscore_view"
-        android:layout_width="0dp"
-        android:layout_height="1px"
-        android:layout_marginTop="15dp"
-        android:background="#a8a8a8"
-        app:layout_constraintEnd_toEndOf="@+id/login_password_et"
-        app:layout_constraintStart_toStartOf="@+id/login_password_et"
-        app:layout_constraintTop_toBottomOf="@+id/login_password_et" />
-
-    <TextView
-        android:id="@+id/login_error_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:textColor="#F80202"
-        android:textSize="16sp"
-        android:visibility="gone"
-        app:layout_constraintBottom_toTopOf="@id/login_sign_in_btn"
-        app:layout_constraintStart_toStartOf="@id/login_password_underscore_view"
-        app:layout_constraintTop_toBottomOf="@id/login_password_underscore_view" />
-
-    <ImageView
-        android:id="@+id/login_hide_password_iv"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginEnd="5dp"
-        android:src="@drawable/btn_input_password"
-        app:layout_constraintBottom_toBottomOf="@+id/login_password_et"
-        app:layout_constraintEnd_toEndOf="@+id/login_password_et"
-        app:layout_constraintTop_toTopOf="@+id/login_password_et" />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/login_sign_in_btn"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="20dp"
-        android:background="@drawable/button_background_nc4_color"
-        android:text="로그인"
-        android:textColor="@color/white"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/login_password_underscore_view" />
-
-    <Button
-        android:id="@+id/login_sign_up_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:clickable="true"
-        android:text="회원가입"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/login_sign_in_btn"
-        app:layout_constraintTop_toBottomOf="@+id/login_sign_in_btn" />
-
-    <LinearLayout
-        android:id="@+id/login_social_login_layout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/login_sign_up_btn">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
         <ImageView
-            android:id="@+id/login_google_login_iv"
-            android:layout_width="45dp"
-            android:layout_height="45dp"
-            android:src="@drawable/google_44" />
+            android:id="@+id/login_close_iv"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="5dp"
+            android:src="@drawable/btn_actionbar_close"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
-            android:id="@+id/login_kakako_login_iv"
-            android:layout_width="45dp"
-            android:layout_height="45dp"
-            android:layout_marginStart="15dp"
-            android:src="@drawable/kakako_44" />
+            android:id="@+id/login_flo_logo_iv"
+            android:layout_width="80dp"
+            android:layout_height="30dp"
+            android:src="@drawable/nc4_logo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/login_close_iv" />
 
-    </LinearLayout>
+        <EditText
+            android:id="@+id/login_id_et"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="80dp"
+            android:layout_marginEnd="5dp"
+            android:background="@null"
+            android:hint="아이디(이메일)"
+            android:inputType="text"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toStartOf="@+id/login_at_sign_tv"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/login_flo_logo_iv" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <View
+            android:id="@+id/login_id_underscore_view"
+            android:layout_width="0dp"
+            android:layout_height="1px"
+            android:layout_marginTop="15dp"
+            android:background="#a8a8a8"
+            app:layout_constraintEnd_toEndOf="@+id/login_id_et"
+            app:layout_constraintStart_toStartOf="@+id/login_id_et"
+            app:layout_constraintTop_toBottomOf="@+id/login_id_et" />
+
+        <TextView
+            android:id="@+id/login_at_sign_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="\@"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/login_id_et"
+            app:layout_constraintEnd_toEndOf="@+id/login_flo_logo_iv"
+            app:layout_constraintStart_toStartOf="@+id/login_flo_logo_iv"
+            app:layout_constraintTop_toTopOf="@+id/login_id_et" />
+
+        <EditText
+            android:id="@+id/login_direct_input_et"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="20dp"
+            android:background="@null"
+            android:hint="직접입력"
+            android:inputType="textWebEmailAddress"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/login_id_et"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/login_at_sign_tv"
+            app:layout_constraintTop_toTopOf="@+id/login_id_et" />
+
+        <View
+            android:id="@+id/login_address_underscore_view"
+            android:layout_width="0dp"
+            android:layout_height="1px"
+            android:layout_marginTop="15dp"
+            android:background="#a8a8a8"
+            app:layout_constraintEnd_toEndOf="@+id/login_direct_input_et"
+            app:layout_constraintStart_toStartOf="@+id/login_direct_input_et"
+            app:layout_constraintTop_toBottomOf="@+id/login_direct_input_et" />
+
+        <ImageView
+            android:id="@+id/login_email_list_iv"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginEnd="5dp"
+            android:src="@drawable/nugu_btn_down"
+            app:layout_constraintBottom_toBottomOf="@+id/login_direct_input_et"
+            app:layout_constraintEnd_toEndOf="@+id/login_direct_input_et"
+            app:layout_constraintTop_toTopOf="@+id/login_direct_input_et" />
+
+        <EditText
+            android:id="@+id/login_password_et"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="20dp"
+            android:background="@null"
+            android:hint="비밀번호"
+            android:inputType="textPassword"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/login_id_underscore_view" />
+
+        <View
+            android:id="@+id/login_password_underscore_view"
+            android:layout_width="0dp"
+            android:layout_height="1px"
+            android:layout_marginTop="15dp"
+            android:background="#a8a8a8"
+            app:layout_constraintEnd_toEndOf="@+id/login_password_et"
+            app:layout_constraintStart_toStartOf="@+id/login_password_et"
+            app:layout_constraintTop_toBottomOf="@+id/login_password_et" />
+
+        <TextView
+            android:id="@+id/login_error_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:textColor="#F80202"
+            android:textSize="16sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@id/login_sign_in_btn"
+            app:layout_constraintStart_toStartOf="@id/login_password_underscore_view"
+            app:layout_constraintTop_toBottomOf="@id/login_password_underscore_view" />
+
+        <ImageView
+            android:id="@+id/login_hide_password_iv"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginEnd="5dp"
+            android:src="@drawable/btn_input_password"
+            app:layout_constraintBottom_toBottomOf="@+id/login_password_et"
+            app:layout_constraintEnd_toEndOf="@+id/login_password_et"
+            app:layout_constraintTop_toTopOf="@+id/login_password_et" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/login_sign_in_btn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/button_background_nc4_color"
+            android:text="로그인"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/login_password_underscore_view" />
+
+        <Button
+            android:id="@+id/login_sign_up_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="회원가입"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/login_sign_in_btn"
+            app:layout_constraintTop_toBottomOf="@+id/login_sign_in_btn" />
+
+        <LinearLayout
+            android:id="@+id/login_social_login_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/login_sign_up_btn">
+
+            <ImageView
+                android:id="@+id/login_google_login_iv"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:src="@drawable/google_44" />
+
+            <ImageView
+                android:id="@+id/login_kakako_login_iv"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_marginStart="15dp"
+                android:src="@drawable/kakako_44" />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
