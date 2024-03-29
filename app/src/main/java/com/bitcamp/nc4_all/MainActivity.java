@@ -57,6 +57,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //onCreate되는 시점에 MainActivity의 원래 테마가 나타나도록 MainActivity에 아래의 내용을 추가.
+        setTheme(R.style.Theme_Nc4_all);
+
         // 하단 네비게이션 바 설정
         FragmentTransaction transaction = fragmentManager.beginTransaction();
         transaction.replace(R.id.menu_frame_layout, fragmentMain).commitAllowingStateLoss();
