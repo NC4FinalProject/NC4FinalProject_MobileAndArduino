@@ -3,4 +3,6 @@
     <color name="colorPrimary">#558BCF</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="form_error">#F11818</color>
 </resources>
