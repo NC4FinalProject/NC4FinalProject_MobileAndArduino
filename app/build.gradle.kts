@@ -41,6 +41,14 @@ dependencies {
     implementation(libs.activity)
     implementation(libs.constraintlayout)
     implementation("com.google.android.material:material:1.4.0")
+    
+    //Retrofit 관련 라이브러리
+    implementation (libs.retrofit)
+    implementation (libs.converter.gson)
+
+    //로그를 남기기 위한 라이브러리
+    implementation("com.squareup.okhttp3:logging-interceptor:4.9.1")
+
     implementation(libs.annotation)
     implementation(libs.lifecycle.livedata.ktx)
     implementation(libs.lifecycle.viewmodel.ktx)
